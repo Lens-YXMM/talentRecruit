@@ -1,0 +1,20 @@
+.carousel-item {
+    height: 616px;
+    overflow: hidden;
+}
+
+.nav-link {
+    padding: 0rem 1rem;
+}
+
+.bl {
+    border-left: 1px solid #5d5d5d;
+}
+
+#userDropdown + div{
+    width: 6rem;
+}
+
+.bgn {
+    background-color: transparent;
+}
