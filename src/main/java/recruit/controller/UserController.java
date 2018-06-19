@@ -1,8 +1,9 @@
-package recruit.web.controller;
+package recruit.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import recruit.service.UserService;
 
 import java.util.HashMap;
@@ -14,9 +15,8 @@ public class UserController {
     @Autowired
     public UserService userService;
 
-    @ResponseBody
     @RequestMapping(value = "/login",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
-    public Map<String, Object> loginUser(@RequestParam(value = "account") String account, @RequestParam(value = "password") String password){
+    public ModelAndView loginUser(@RequestParam(value = "account") String account, @RequestParam(value = "password") String password){
         Map<String, Object> map = new HashMap<>();
         int result = 0;
         try {
@@ -28,7 +28,11 @@ public class UserController {
         if (result <= 0) {
             result = 0;
         }
-        return map;
+
+        map.put("result",result);
+
+        ModelAndView mv  = new ModelAndView("index",map);
+        return mv;
     }
 
     //@ResponseBody

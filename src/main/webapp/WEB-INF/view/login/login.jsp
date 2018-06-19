@@ -13,13 +13,13 @@
     <title>欢迎登录XX站点</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../styles/login.css" type="text/css">
+    <link rel="stylesheet" href="styles/login.css" type="text/css">
 
     <script src="../../../scripts/login.js" type="text/javascript" async></script>
 
 </head>
 <body class="text-center">
-<form class="form-signin" action="/login" method="post">
+<form class="form-signin" action="login" method="post">
     <i class="fas fa-trademark fa-5x mb-4"></i>
     <h1 class="h3 font-weight-normal mb-3">请登录</h1>
     <label for="inputUsername" class="sr-only">用户名</label>
