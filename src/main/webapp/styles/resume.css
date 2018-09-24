@@ -1,0 +1,43 @@
+.r-bg {
+    background-color: #fafafa;
+}
+
+.rb-s {
+    border: 1px solid #f2f2f2;
+    border-radius: 3px;
+}
+
+.pr {
+    position: relative;
+}
+
+.pa-rt {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.fa-user-circle {
+    color: #9c9c9c;
+}
+
+.scroll-fixed {
+    position: fixed;
+    width: 317px;
+}
+
+.mr-p-info em {
+    font-style: normal;
+}
+
+.resume-content > div {
+    margin-bottom: 20px;
+}
+
+.resume-content div h3 {
+    text-align: center;
+}
+
+#workResp {
+    resize: none;
+}

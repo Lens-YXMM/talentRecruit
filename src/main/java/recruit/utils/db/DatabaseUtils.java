@@ -4,8 +4,10 @@ package recruit.utils.db;/**
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import recruit.data.entity.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,24 +42,54 @@ public class DatabaseUtils {
     }
 
     /**
-     * 执行数据库查询操作，查询单条数据
+     * 执行数据库查询操作，查询单挑数据
      * @param sql sql语句
-     * @return 数据库中查询到的单条语句的map，key值和数据库表字段名称相同
-     * */
-    public Map<String, Object> executeQueryForObject(String sql){
-        Map<String, Object> map = null;
-        List<Map<String, Object>> list = new ArrayList<>();
-        try {
-            list = jdbcTemplate.queryForList(sql);
-        } catch (DataAccessException e) {
-            System.out.println("查询单条数据异常----");
-            e.printStackTrace();
-        }
-        if (list != null && list.size() > 0){
-            map = list.get(0);
-        }
-        return map;
-    }
+     * @return 数据库中查询到的单条语句的E object，之后再赋值给对象
+     */
+    //public List<Object> executeQueryForObject(Object[] obj, String sql){
+    //    List<Object> list = new ArrayList<>();
+    //    try {
+    //        //list = jdbcTemplate.queryForList(sql);
+    //        list = jdbcTemplate.queryForList(sql,obj,Object.class);
+    //    } catch (DataAccessException e) {
+    //        System.out.println("查询单条数据异常----");
+    //        e.printStackTrace();
+    //    }
+    //    return list;
+    //}
+    //public <T> List<T> executeQueryForObject(Object[] obj, String sql){
+    //    List<T> list = new ArrayList<>();
+    //    try {
+    //        //list = jdbcTemplate.queryForList(sql);
+    //        list = jdbcTemplate.query(sql,
+    //                obj,
+    //                new BeanPropertyRowMapper<T>(T.class));
+    //    } catch (DataAccessException e) {
+    //        System.out.println("查询单条数据异常----");
+    //        e.printStackTrace();
+    //    }
+    //    return list;
+    //}
+
+    ///**
+    // * 执行数据库查询操作，查询单条数据
+    // * @param sql sql语句
+    // * @return 数据库中查询到的单条语句的map，key值和数据库表字段名称相同
+    // * */
+    //public Map<String, Object> executeQueryForObject(String sql){
+    //    Map<String, Object> map = null;
+    //    List<Map<String, Object>> list = new ArrayList<>();
+    //    try {
+    //        list = jdbcTemplate.queryForList(sql);
+    //    } catch (DataAccessException e) {
+    //        System.out.println("查询单条数据异常----");
+    //        e.printStackTrace();
+    //    }
+    //    if (list != null && list.size() > 0){
+    //        map = list.get(0);
+    //    }
+    //    return map;
+    //}
 
     /**
      * 执行数据库查询操作，查询多条数据

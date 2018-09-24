@@ -2,36 +2,61 @@ package recruit.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
+import recruit.data.entity.User;
 import recruit.service.UserService;
 
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
 @Controller
+@SessionAttributes({"user"})
 public class UserController {
+
+    User user = new User();
 
     @Autowired
     public UserService userService;
 
     @RequestMapping(value = "/login",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
-    public ModelAndView loginUser(@RequestParam(value = "account") String account, @RequestParam(value = "password") String password){
+    public ModelAndView loginUser(@RequestParam(value = "account") String account, @RequestParam(value = "password") String password, ModelMap modelMap){
         Map<String, Object> map = new HashMap<>();
         int result = 0;
+        String viewName;
         try {
-            result = userService.loginUser(account, password);
+            user = userService.loginUser(account, password);
         } catch (Exception e) {
             System.out.println("调用用户登录服务异常------");
             e.printStackTrace();
         }
-        if (result <= 0) {
-            result = 0;
+        if (user == null) {
+            result = -1;
+            viewName = "/login/loginError";
+        }else {
+            result = 1;
+            viewName = "index";
+            user.setUiPassword("");
+            modelMap.addAttribute("user",user);
         }
 
         map.put("result",result);
 
-        ModelAndView mv  = new ModelAndView("index",map);
+        ModelAndView mv = new ModelAndView(viewName,map);
+        return mv;
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public ModelAndView logoutUser(@ModelAttribute("user") User user, SessionStatus sessionStatus){
+        /**
+         * @ModelAttribute("User") 相当于将session中名为"User"的对象注入user对象中
+         * sessionStatus中的setComplete方法可以将session中的内容全部清空
+         */
+        sessionStatus.setComplete();
+        ModelAndView mv = new ModelAndView("index");
         return mv;
     }
 

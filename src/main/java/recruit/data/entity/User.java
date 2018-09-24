@@ -3,94 +3,103 @@ package recruit.data.entity;
 import java.util.Date;
 
 public class User {
-    private int userId;
-    private String account;
-    private String password;
-    private String name;
-    private String phoneNum;
-    private String mailAddr;
-    private Date createTime;
-    private int weight;
-    private int isDeleted;
-    private int isBlacked;
+    private int uiId;
+    private String uiAccount;
+    private String uiPassword;
+    private String uiName;
+    private int uiGender;
+    private String uiPhoneNum;
+    private String uiMailAddr;
+    private Date uiCreatedTime;
+    private int uiWeight;
+    private int uiIsdeleted;
+    private int uiIsblacked;
 
-    public int getUserId() {
-        return userId;
+    public int getUiId() {
+        return uiId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUiId(int uiId) {
+        this.uiId = uiId;
     }
 
-    public String getAccount() {
-        return account;
+    public String getUiAccount() {
+        return uiAccount;
     }
 
-    public void setAccount(String account) {
-        this.account = account;
+    public void setUiAccount(String uiAccount) {
+        this.uiAccount = uiAccount;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUiPassword() {
+        return uiPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUiPassword(String uiPassword) {
+        this.uiPassword = uiPassword;
     }
 
-    public String getName() {
-        return name;
+    public String getUiName() {
+        return uiName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUiName(String uiName) {
+        this.uiName = uiName;
     }
 
-    public String getPhoneNum() {
-        return phoneNum;
+    public int getUiGender() {
+        return uiGender;
     }
 
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
+    public void setUiGender(int uiGender) {
+        this.uiGender = uiGender;
     }
 
-    public String getMailAddr() {
-        return mailAddr;
+    public String getUiPhoneNum() {
+        return uiPhoneNum;
     }
 
-    public void setMailAddr(String mailAddr) {
-        this.mailAddr = mailAddr;
+    public void setUiPhoneNum(String uiPhoneNum) {
+        this.uiPhoneNum = uiPhoneNum;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public String getUiMailAddr() {
+        return uiMailAddr;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setUiMailAddr(String uiMailAddr) {
+        this.uiMailAddr = uiMailAddr;
     }
 
-    public int getWeight() {
-        return weight;
+    public Date getUiCreatedTime() {
+        return uiCreatedTime;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public void setUiCreatedTime(Date uiCreatedTime) {
+        this.uiCreatedTime = uiCreatedTime;
     }
 
-    public int getIsDeleted() {
-        return isDeleted;
+    public int getUiWeight() {
+        return uiWeight;
     }
 
-    public void setIsDeleted(int isDeleted) {
-        this.isDeleted = isDeleted;
+    public void setUiWeight(int uiWeight) {
+        this.uiWeight = uiWeight;
     }
 
-    public int getIsBlacked() {
-        return isBlacked;
+    public int getUiIsdeleted() {
+        return uiIsdeleted;
     }
 
-    public void setIsBlacked(int isBlacked) {
-        this.isBlacked = isBlacked;
+    public void setUiIsdeleted(int uiIsdeleted) {
+        this.uiIsdeleted = uiIsdeleted;
+    }
+
+    public int getUiIsblacked() {
+        return uiIsblacked;
+    }
+
+    public void setUiIsblacked(int uiIsblacked) {
+        this.uiIsblacked = uiIsblacked;
     }
 }

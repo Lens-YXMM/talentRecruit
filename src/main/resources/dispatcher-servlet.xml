@@ -32,7 +32,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd http://www.springfr
     <context:property-placeholder location="classpath:db.properties"/>
     <!-- 配置数据库数据源 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="user" value="${username}"></property>
+        <property name="user" value="${name}"></property>
         <property name="password" value="${password}"></property>
         <property name="driverClass" value="${driver}"></property>
         <property name="jdbcUrl" value="${url}"></property>

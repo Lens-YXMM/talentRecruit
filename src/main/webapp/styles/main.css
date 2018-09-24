@@ -1,3 +1,97 @@
+body {
+    -webkit-transition: color 200ms;
+    -moz-transition: color 200ms;
+    -o-transition: color 200ms;
+    transition: color 200ms;
+}
+
 .dn {
     display: none;
 }
+
+.navbar {
+    padding: 0;
+}
+
+.navbar .navbar-brand .logo {
+    position: relative;
+    left: -10px;
+    border-radius: 3px;
+}
+
+.navbar .nav-item  .nav-link{
+
+}
+
+.navbar .nav-item:hover,
+.navbar .nav-item.active {
+    background-color: #e8e5e5;
+    margin-bottom: 0;
+    border-bottom: 2px solid #007bff;
+}
+
+.navbar .nav-item {
+    line-height: 2;
+    margin-bottom: 2px;
+}
+
+#navbarDropdown +div,
+#userDropdown + div {
+    min-width: 6rem;
+}
+
+.carousel .carousel-item {
+    overflow: hidden;
+}
+
+@media screen and (max-width: 374px) {
+    .carousel .carousel-item {
+        height: 160px;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 1023px) {
+    .carousel .carousel-item {
+        height: 382px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 2048px) {
+    .carousel .carousel-item {
+        height: 580px;
+    }
+}
+
+footer {
+    background-color: #363636;
+}
+
+footer .container {
+    padding-bottom: 2rem!important;
+}
+
+footer .list-group .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: .25rem .75rem;
+}
+
+footer .list-group .list-group-item a:hover {
+    text-decoration: none;
+    color: #666!important;
+}
+
+footer .contact {
+    border-left: 2px solid #5d5d5d;
+}
+
+
+
+footer > .row {
+    background-color: #272727;
+}
+
+
+
+
+

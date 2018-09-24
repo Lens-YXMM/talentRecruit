@@ -2,8 +2,8 @@ package recruit.dao;
 
 import recruit.data.entity.User;
 
-public interface UserDao {
-    public int getLoginResult(String account, String password);
+public interface UserDao extends BaseDao<User> {
+    public User getLoginResult(String account, String password);
 
     //public int hasAccount();
     //
