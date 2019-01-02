@@ -1,0 +1,97 @@
+.side-bar {
+    float: left;
+    background-color: #424862;
+    min-height: 800px;
+    height: 100%;
+    width: 180px;
+}
+
+.side-bar a{
+    color: #7a7a7a;
+    display: block;
+}
+
+.side-bar .logo {
+    margin: 20px auto;
+    text-align: center;
+    color: #007bff;
+}
+
+.side-nav a {
+    padding-left: 10px;
+    line-height: 32px;
+    height: 34px;;
+}
+
+.side-nav a:hover,
+.side-nav .active {
+    color: #f7f7f7;
+    padding-left: 8px;
+    background-color: rgba(223, 223, 223, 0.1);
+    border-left: 2px solid #007bff;
+}
+
+.side-nav i {
+    width: 24px;
+    text-align: center;
+}
+
+.side-nav .dropdown a{
+    background-color: rgba(97, 97, 112, 0.53);
+    color: #a6a6a6;
+    padding-left: 34px;
+}
+
+.side-nav .dropdown a:hover,
+.side-nav .dropdown .active
+{
+    color: #f7f7f7;
+    background-color: rgba(223, 223, 223, 0.3);
+    border-left: none;
+}
+
+.content {
+    width: 75%;
+    float: left;
+    margin-left: 30px;
+}
+
+.content .content-wrap {
+    padding: 10px 20px;
+    border: 1px solid #d6d6d6;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.content .header {
+    margin-top: 20px;
+}
+
+.content .header .header-r {
+    float: right;
+}
+
+.content .header .header-r li {
+    float: left;
+}
+
+.content .header .header-r .username {
+    padding: 8px 12px;
+}
+
+.content .header .breadcrumb {
+    background: none;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: #AAA;
+}
+
+.content-wrap form button {
+    margin-left: 15px;
+}
+

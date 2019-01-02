@@ -60,7 +60,7 @@
   </servlet-mapping>
 
   <welcome-file-list>
-    <welcome-file>/WEB-INF/view/login/login.jsp</welcome-file>
+    <welcome-file>/WEB-INF/view/signin/signin.html</welcome-file>
   </welcome-file-list>
 
 </web-app>

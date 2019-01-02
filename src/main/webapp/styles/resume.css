@@ -30,14 +30,64 @@
     font-style: normal;
 }
 
-.resume-content > div {
-    margin-bottom: 20px;
+.resume-content > div > div,
+.resume-content > div > form {
+    padding-bottom: 20px;
 }
 
 .resume-content div h3 {
     text-align: center;
 }
 
+.resume-content form {
+    width: 500px;
+    margin: auto;
+}
+
+div.title .title-l span {
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+    margin-left: 10px;
+}
+
+div.title .title-l span:before {
+    content: '';
+    display: block;
+    border-left: 3px solid #007bff;
+    height: 16px;
+    width: 3px;
+    position: absolute;
+    left: -7px;
+    top: 55%;
+    transform: translateY(-50%);
+}
+
+.btn-wrap {
+    padding-left: 10px;
+}
+
+.btn-wrap .btn {
+    margin-left: 10px;
+}
+
+.show-list .list-content-wrap {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.show-list .list-content-wrap .mr-content-l .company-name{
+    color: #333;
+    font-weight: 600;
+}
+
 #workResp {
     resize: none;
+}
+
+/*@overrize*/
+.btn-link:hover {
+    color: #007bff;
+    text-decoration: none;
 }

@@ -1,0 +1,35 @@
+.wrap {
+    height: 600px;
+    margin: 30px auto;
+}
+
+.account-side-bar {
+    border-right: 1px solid #e3ebe9;
+    text-align: right;
+    line-height: 40px;
+}
+
+.account-side-bar a {
+    color: #777;
+    padding-right: 30px;
+    display: block;
+}
+
+.account-side-bar .link-active,
+.account-side-bar a:hover {
+    color: #007bff;
+    padding-right: 28px;
+    text-decoration: none;
+    border-right: 2px solid #007bff;
+}
+
+.update-pass-form {
+    margin-left: 80px;
+    width: 400px;
+}
+
+.update-pass-form .input-wrap {
+    margin-bottom: 25px;
+    position: relative;
+}
+

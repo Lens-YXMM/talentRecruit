@@ -21,6 +21,15 @@ body {
     max-width: 680px;
 }
 
+.input-wrap {
+    position: relative;
+}
+
+.link:hover
+{
+    text-decoration: none;
+}
+
 .form-signin,
 .form-signup {
     width: 100%;
@@ -72,7 +81,6 @@ body {
 .form-signup #inputPwd {
     border-radius: 0;
 }
-
 /*.container .form-signup input:last-child,*/
 .form-signup #inputConfirmPwd {
     margin-bottom: 30px;
@@ -80,13 +88,6 @@ body {
     border-top-right-radius: 0;
 }
 
-.form-signin .forgetPwd:hover,
-.form-signin .register a:hover,
-.form-signup .agreement a:hover,
-.login_now:hover
-{
-    text-decoration: none;
-}
 
 .divider {
     position: relative;
@@ -115,7 +116,11 @@ div.signup-right h5 {
     margin-top: 70px;
 }
 
-form.supplement {
+.supplement-container {
+    max-width: 520px;
+}
+
+.form-supplement {
     position: relative;
 }
 
@@ -123,22 +128,45 @@ div.form-row {
   margin-left: 0;
 }
 
-form.supplement label.col-form-label {
+.form-supplement label.col-form-label {
     min-width: 72px;
 }
 
-form.supplement label.required::before {
+.form-supplement label.required::before {
     content: '*';
     color: red;
     position: absolute;
     left: -26px;
 }
 
-form.supplement button {
+.form-supplement button {
     margin: 15px;
 }
 
+.border-invaild {
+    border-color: #dc3545;
+}
 
+.border-invaild:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25);
+}
+
+.invalid-tooltip {
+    top: -50%;
+    left: 10%;
+}
+
+.invalid-tooltip .arrow::before {
+    position: absolute;
+    left: 25%;
+    top: 100%;
+    content: "";
+    border-color: transparent;
+    border-top-color: rgba(220,53,69,.8);
+    border-width: .4rem .4rem 0;
+    border-style: solid;
+}
 
 
 

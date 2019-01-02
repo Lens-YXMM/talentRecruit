@@ -5,6 +5,19 @@ body {
     transition: color 200ms;
 }
 
+dl, dd, p, ol, ul {
+    padding: 0;
+    margin: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .dn {
     display: none;
 }
@@ -20,11 +33,18 @@ body {
 }
 
 .navbar .nav-item  .nav-link{
+    color: #999;
+}
 
+.navbar .nav-item  .nav-link:hover,
+.navbar .nav-item  .link-active
+{
+    color: #007bff;
 }
 
 .navbar .nav-item:hover,
-.navbar .nav-item.active {
+.navbar .nav-item.active
+{
     background-color: #e8e5e5;
     margin-bottom: 0;
     border-bottom: 2px solid #007bff;
