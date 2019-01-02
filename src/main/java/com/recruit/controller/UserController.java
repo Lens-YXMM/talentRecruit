@@ -1,15 +1,14 @@
-package recruit.controller;
+package com.recruit.controller;
 
+import com.recruit.data.entity.User;
+import com.recruit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
-import recruit.data.entity.User;
-import recruit.service.UserService;
 
-import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,7 +21,7 @@ public class UserController {
     @Autowired
     public UserService userService;
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/signin",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     public ModelAndView loginUser(@RequestParam(value = "account") String account, @RequestParam(value = "password") String password, ModelMap modelMap){
         Map<String, Object> map = new HashMap<>();
         int result = 0;
@@ -35,7 +34,7 @@ public class UserController {
         }
         if (user == null) {
             result = -1;
-            viewName = "/login/loginError";
+            viewName = "/signin/signinError";
         }else {
             result = 1;
             viewName = "index";

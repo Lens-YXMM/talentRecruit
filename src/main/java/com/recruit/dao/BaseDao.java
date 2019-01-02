@@ -1,4 +1,4 @@
-package recruit.dao;
+package com.recruit.dao;
 
 import java.util.List;
 

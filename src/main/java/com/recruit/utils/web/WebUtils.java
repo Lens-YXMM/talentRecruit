@@ -1,4 +1,4 @@
-package recruit.utils.web;
+package com.recruit.utils.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

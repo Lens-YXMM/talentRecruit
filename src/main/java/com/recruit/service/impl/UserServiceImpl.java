@@ -1,11 +1,11 @@
-package recruit.service.impl;
+package com.recruit.service.impl;
 
+import com.recruit.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import recruit.dao.UserDao;
-import recruit.data.entity.User;
-import recruit.service.UserService;
+import com.recruit.data.entity.User;
+import com.recruit.service.UserService;
 
 @Service("userService")
 @Transactional

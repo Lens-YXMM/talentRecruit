@@ -1,6 +1,6 @@
-package recruit.dao;
+package com.recruit.dao;
 
-import recruit.data.entity.User;
+import com.recruit.data.entity.User;
 
 public interface UserDao extends BaseDao<User> {
     public User getLoginResult(String account, String password);

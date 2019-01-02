@@ -1,15 +1,12 @@
-package recruit.utils.db;/**
+package com.recruit.utils.db;/**
  * Created by JuN on 2018/4/28.
  */
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import recruit.data.entity.User;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 

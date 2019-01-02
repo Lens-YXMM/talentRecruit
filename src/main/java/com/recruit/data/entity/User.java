@@ -1,4 +1,4 @@
-package recruit.data.entity;
+package com.recruit.data.entity;
 
 import java.util.Date;
 

@@ -1,7 +1,7 @@
-package recruit.service;
+package com.recruit.service;
 
 
-import recruit.data.entity.User;
+import com.recruit.data.entity.User;
 
 public interface UserService {
 
