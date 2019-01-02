@@ -40,7 +40,7 @@ $(function () {
 
         // 带参数跳转至信息补充页面
         // TODO: 改成跳转jsp页面
-        window.location.href = './infoSupplement.html?txt='+encodeURIComponent(username+'|'+password);
+        window.location.href = './infoSupplement.jsp?txt='+encodeURIComponent(username+'|'+password);
     });
 
     function confirm_password() {

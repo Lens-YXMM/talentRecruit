@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" pageEncoding="utf-8" %>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,7 +63,7 @@
         <div class="divider"></div>
         <div class="signup-right">
             <h5>没有账号:</h5>
-            <a href="signup.html" class="link">立即注册 <i class="fa fa-arrow-circle-o-right"></i></a>
+            <a href="signup.jsp" class="link">立即注册 <i class="fa fa-arrow-circle-o-right"></i></a>
             <h5>使用以下帐号直接登录:</h5>
             <a href="https://weibo.com" class="h4 weibo px-3" target="_blank"><i class="fa fa-weibo"></i></a>
             <a href="https://weixin.com" class="h4 wechat px-3"><i class="fa fa-weixin"></i></a>

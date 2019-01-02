@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" pageEncoding="utf-8" %>
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
     <div class="side-bar">
         <a class="logo" href="#"><i class="fa fa-suitcase fa-3x" aria-hidden="true"></i><br/>XX企业</a>
         <ul class="side-nav">
-            <li><a class="active" href="./index.html"><i class="fa fa-home" aria-hidden="true"></i>首页</a></li>
+            <li><a class="active" href="index.jsp"><i class="fa fa-home" aria-hidden="true"></i>首页</a></li>
             <li><a href="#"><i class="fa fa-bullhorn" aria-hidden="true"></i>公告管理</a></li>
             <li>
                 <a href="#recruit-info-dropdown" data-toggle="collapse">
