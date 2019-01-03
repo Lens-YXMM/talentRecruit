@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapping.resumeProjectMapper">
+    <!-- 映射关系 -->
+    <resultMap id="resumeProjectResult" type="ResumeProject">
+        <id property="id" column="id"/>
+        <result property="resumeId" column="resume_id"/>
+        <result property="name" column="name"/>
+        <result property="role" column="role"/>
+        <result property="detail" column="detail"/>
+        <result property="start" column="start"/>
+        <result property="end" column="end"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <select id="getProjectByResumeId" parameterType="int" resultMap="resumeProjectResult">
+        SELECT * FROM resume_project WHERE resume_id=#{resumeId}
+    </select>
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapping.departmentMapper">
+    <!-- 映射关系 -->
+    <resultMap id="departmentResult" type="Department">
+        <id property="id" column="id"/>
+        <result property="introduction" column="introduction"/>
+        <result property="location" column="location"/>
+        <result property="number" column="number"/>
+        <result property="status" column="status"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <select id="getDepartment" parameterType="int" resultMap="departmentResult">
+        SELECT * FROM sys_department WHERE id=#{id}
+    </select>
+</mapper>

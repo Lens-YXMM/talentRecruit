@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapping.resumeJobPreferranceMapper">
+    <!-- 映射关系 -->
+    <resultMap id="resumeJobPreferranceResult" type="ResumeJobPreferrance">
+        <id property="id" column="id"/>
+        <result property="resumeId" column="resume_id"/>
+        <result property="jobId" column="job_id"/>
+        <result property="salaryRange" column="salary_range"/>
+        <result property="firstCity" column="first_city"/>
+        <result property="secondCity" column="second_city"/>
+        <result property="employDate" column="employ_date"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <select id="getJobPreferranceByResumeId" parameterType="int" resultMap="resumeJobPreferranceResult">
+        SELECT * FROM resume_job_preferrance WHERE resume_id=#{resumeId}
+    </select>
+</mapper>

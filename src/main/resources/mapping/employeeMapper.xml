@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapping.employeeMapper">
+    <!-- 映射关系 -->
+    <resultMap id="employeeResult" type="Employee">
+        <id property="id" column="id"/>
+        <result property="jobId" column="job_id"/>
+        <result property="deptId" column="dept_id"/>
+        <result property="location" column="location"/>
+        <result property="name" column="name"/>
+        <result property="gender" column="gender"/>
+        <result property="status" column="status"/>
+        <result property="traineeStart" column="trainee_start"/>
+        <result property="traineeEnd" column="trainee_end"/>
+        <result property="probationStart" column="probation_start"/>
+        <result property="probationEnd" column="probation_end"/>
+        <result property="regularDate" column="regular_date"/>
+        <result property="dimissionDate" column="dimission_date"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <select id="getEmployee" parameterType="int" resultMap="employeeResult">
+        SELECT * FROM sys_employee WHERE id=#{id}
+    </select>
+</mapper>

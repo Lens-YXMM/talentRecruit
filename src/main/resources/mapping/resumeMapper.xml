@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapping.resumeMapper">
+    <!-- 映射关系 -->
+    <resultMap id="resumeResult" type="Resume">
+        <id property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="nativeProvince" column="native_province"/>
+        <result property="nativeDistrict" column="native_district"/>
+        <result property="maritalStatus" column="marital_status"/>
+        <result property="educationLevel" column="education_level"/>
+        <result property="school" column="school"/>
+        <result property="currentLocation" column="current_location"/>
+        <result property="personalState" column="personal_state"/>
+        <result property="preview" column="preview"/>
+        <result property="defaultPost" column="default_post"/>
+        <result property="attachment" column="attachment"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <select id="getResumeByUserId" parameterType="int" resultMap="resumeResult">
+        SELECT * FROM sys_resume WHERE user_id=#{userId}
+    </select>
+</mapper>

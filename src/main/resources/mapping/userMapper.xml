@@ -6,16 +6,19 @@
 <mapper namespace="mapping.userMapper">
     <!-- 映射关系 -->
     <resultMap id="userResult" type="User">
-        <id property="uiId" column="id"/>
-        <result property="uiAccount" column="username"/>
-        <result property="uiPassword" column="password"/>
-        <result property="uiName" column="name"/>
-        <result property="uiGender" column="gender"/>
-        <result property="uiPhoneNum" column="phone"/>
-        <result property="uiMailAddr" column="email"/>
-        <result property="uiCreatedTime" column="create_time"/>
-        <result property="uiWeight" column="role"/>
-        <result property="uiIsblacked" column="blacked"/>
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="phone" column="phone"/>
+        <result property="email" column="email"/>
+        <result property="name" column="name"/>
+        <result property="gender" column="gender"/>
+        <result property="birthday" column="birthday"/>
+        <result property="role" column="role"/>
+        <result property="blacked" column="blacked"/>
+        <result property="blacked" column="blacked"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
     </resultMap>
 
     <select id="getUser" parameterType="int" resultMap="userResult">

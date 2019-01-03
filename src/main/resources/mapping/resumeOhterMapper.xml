@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapping.resumeOtherMapper">
+    <!-- 映射关系 -->
+    <resultMap id="resumeOtherResult" type="ResumeOther">
+        <id property="id" column="id"/>
+        <result property="resumeId" column="resume_id"/>
+        <result property="title" column="title"/>
+        <result property="description" column="description"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <select id="getOtherByResumeId" parameterType="int" resultMap="resumeOtherResult">
+        SELECT * FROM resume_other WHERE resume_id=#{resumeId}
+    </select>
+</mapper>

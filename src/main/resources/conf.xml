@@ -20,5 +20,21 @@
 
     <mappers>
         <mapper resource="mapping/userMapper.xml"/>
+        <mapper resource="mapping/jobMapper.xml"/>
+        <mapper resource="mapping/categoryMapper.xml"/>
+        <mapper resource="mapping/departmentMapper.xml"/>
+        <mapper resource="mapping/resumeMapper.xml"/>
+        <mapper resource="mapping/resumeJobPreferranceMapper.xml"/>
+        <mapper resource="mapping/resumeEducationMapper.xml"/>
+        <mapper resource="mapping/resumeWorkMapper.xml"/>
+        <mapper resource="mapping/resumeProjectMapper.xml"/>
+        <mapper resource="mapping/resumeAwardMapper.xml"/>
+        <mapper resource="mapping/resumeSkillMapper.xml"/>
+        <mapper resource="mapping/resumeLanguageMapper.xml"/>
+        <mapper resource="mapping/resumeOtherMapper.xml"/>
+        <mapper resource="mapping/recruitingRecordMapper.xml"/>
+        <mapper resource="mapping/employeeMapper.xml"/>
+        <mapper resource="mapping/areaMapper.xml"/>
+        <mapper resource="mapping/schoolMapper.xml"/>
     </mappers>
 </configuration>
