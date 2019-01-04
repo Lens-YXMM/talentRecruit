@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.recruit.data.pojo.Department">
     <constructor>
       <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="introduction" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="location" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="number" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
@@ -13,7 +13,7 @@
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
-    id, introduction, location, number, status, create_time, update_time
+    id, name, location, number, status, create_time, update_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -26,10 +26,10 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.recruit.data.pojo.Department">
-    insert into sys_department (id, introduction, location, 
+    insert into sys_department (id, name, location,
       number, status, create_time, 
       update_time)
-    values (#{id,jdbcType=INTEGER}, #{introduction,jdbcType=VARCHAR}, #{location,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{location,jdbcType=INTEGER},
       #{number,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}, now(), now())
   </insert>
   <insert id="insertSelective" parameterType="com.recruit.data.pojo.Department">
@@ -38,8 +38,8 @@
       <if test="id != null">
         id,
       </if>
-      <if test="introduction != null">
-        introduction,
+      <if test="name != null">
+        name,
       </if>
       <if test="location != null">
         location,
@@ -61,8 +61,8 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="introduction != null">
-        #{introduction,jdbcType=VARCHAR},
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
       </if>
       <if test="location != null">
         #{location,jdbcType=INTEGER},
@@ -84,8 +84,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.recruit.data.pojo.Department">
     update sys_department
     <set>
-      <if test="introduction != null">
-        introduction = #{introduction,jdbcType=VARCHAR},
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="location != null">
         location = #{location,jdbcType=INTEGER},
@@ -107,7 +107,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.recruit.data.pojo.Department">
     update sys_department
-    set introduction = #{introduction,jdbcType=VARCHAR},
+    set name = #{name,jdbcType=VARCHAR},
       location = #{location,jdbcType=INTEGER},
       number = #{number,jdbcType=INTEGER},
       status = #{status,jdbcType=TINYINT},

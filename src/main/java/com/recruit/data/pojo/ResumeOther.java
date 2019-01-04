@@ -2,14 +2,17 @@ package com.recruit.data.pojo;
 
 import java.util.Date;
 
+/**
+ * @table resume_other 简历自定义信息表
+ */
 public class ResumeOther {
-    private Integer id;
+    private Integer id;         // 主键id
 
-    private Integer resumeId;
+    private Integer resumeId;   // 简历表主键
 
-    private String title;
+    private String title;       // 标题
 
-    private String description;
+    private String description; // 内容描述
 
     private Date createTime;
 

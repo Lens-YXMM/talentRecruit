@@ -2,30 +2,33 @@ package com.recruit.data.pojo;
 
 import java.util.Date;
 
+/**
+ * @table sys_resume 简历基本信息表
+ */
 public class Resume {
-    private Integer id;
+    private Integer id;                 // 主键id
 
-    private Integer userId;
+    private Integer userId;             // 用户表主键
 
-    private Integer nativeProvince;
+    private Integer nativeProvince;     // 籍贯（省）
 
-    private Integer nativeDistrict;
+    private Integer nativeDistrict;     // 籍贯（区（县级市，县，区））
 
-    private Boolean maritalStatus;
+    private Boolean maritalStatus;      // 婚姻状态默认0-未婚，1-已婚，2-离异
 
-    private Boolean educationLevel;
+    private Boolean educationLevel;     // 最高学历1-博士，2-硕士，3-本科，4-大专，5-高中，6-其他
 
-    private String school;
+    private String school;              // 目前所在学校或者毕业学校
 
-    private Integer currentLocation;
+    private Integer currentLocation;    // 当前所在城市
 
-    private String personalState;
+    private String personalState;       // 自我描述
 
-    private String preview;
+    private String preview;             // 简历预览，存放简历信息的HTML富文本
 
-    private Byte defaultPost;
+    private Byte defaultPost;           // 默认简历投递方式，1-在线简历，2-附件简历
 
-    private String attachment;
+    private String attachment;          // 附件存储地址
 
     private Date createTime;
 

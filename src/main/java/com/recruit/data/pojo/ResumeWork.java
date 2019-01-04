@@ -2,22 +2,25 @@ package com.recruit.data.pojo;
 
 import java.util.Date;
 
+/**
+ * @table resume_work 简历工作经历表
+ */
 public class ResumeWork {
-    private Integer id;
+    private Integer id;             // 主键id
 
-    private Integer resumeId;
+    private Integer resumeId;       // 简历表主键
 
-    private String name;
+    private String name;            // 公司名称
 
-    private String department;
+    private String department;      // 所在部门名称
 
-    private String position;
+    private String position;        // 职位名称
 
-    private String responsibility;
+    private String responsibility;  // 工作职责
 
-    private Date start;
+    private Date start;             // 开始日期，以此字段倒序排序
 
-    private String end;
+    private String end;             // 结束日期，若还未结束，则存入“至今”
 
     private Date createTime;
 

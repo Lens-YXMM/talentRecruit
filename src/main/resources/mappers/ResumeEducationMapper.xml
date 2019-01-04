@@ -10,8 +10,8 @@
       <arg column="end" javaType="java.util.Date" jdbcType="DATE" />
       <arg column="department" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="major" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="level" javaType="java.lang.Boolean" jdbcType="BIT" />
-      <arg column="ranking" javaType="java.lang.Boolean" jdbcType="BIT" />
+      <arg column="level" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="ranking" javaType="java.lang.Byte" jdbcType="TINYINT" />
       <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
     </constructor>
@@ -37,7 +37,7 @@
       update_time)
     values (#{id,jdbcType=INTEGER}, #{resumeId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
       #{start,jdbcType=DATE}, #{end,jdbcType=DATE}, #{department,jdbcType=VARCHAR}, #{major,jdbcType=VARCHAR}, 
-      #{level,jdbcType=BIT}, #{ranking,jdbcType=BIT}, now(), now())
+      #{level,jdbcType=TINYINT}, #{ranking,jdbcType=TINYINT}, now(), now())
   </insert>
   <insert id="insertSelective" parameterType="com.recruit.data.pojo.ResumeEducation">
     insert into resume_education
@@ -99,10 +99,10 @@
         #{major,jdbcType=VARCHAR},
       </if>
       <if test="level != null">
-        #{level,jdbcType=BIT},
+        #{level,jdbcType=TINYINT},
       </if>
       <if test="ranking != null">
-        #{ranking,jdbcType=BIT},
+        #{ranking,jdbcType=TINYINT},
       </if>
       <if test="createTime != null">
         now(),
@@ -134,10 +134,10 @@
         major = #{major,jdbcType=VARCHAR},
       </if>
       <if test="level != null">
-        level = #{level,jdbcType=BIT},
+        level = #{level,jdbcType=TINYINT},
       </if>
       <if test="ranking != null">
-        ranking = #{ranking,jdbcType=BIT},
+        ranking = #{ranking,jdbcType=TINYINT},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -156,8 +156,8 @@
       end = #{end,jdbcType=DATE},
       department = #{department,jdbcType=VARCHAR},
       major = #{major,jdbcType=VARCHAR},
-      level = #{level,jdbcType=BIT},
-      ranking = #{ranking,jdbcType=BIT},
+      level = #{level,jdbcType=TINYINT},
+      ranking = #{ranking,jdbcType=TINYINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = now()
     where id = #{id,jdbcType=INTEGER}

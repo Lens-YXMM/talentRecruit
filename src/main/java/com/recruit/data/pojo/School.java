@@ -1,15 +1,18 @@
 package com.recruit.data.pojo;
 
+/**
+ * @table dictionary_school 学校字典表
+ */
 public class School {
-    private Integer id;
+    private Integer id;     // 主键id
 
-    private String name;
+    private String name;    // 学校名称
 
-    private String place;
+    private String place;   // 所在省（直辖市）名称
 
-    private String type;
+    private String type;    // 学校类型
 
-    private String properties;
+    private String properties;  // 学校性质，如本科，高职专科，其他
 
     public School(Integer id, String name, String place, String type, String properties) {
         this.id = id;

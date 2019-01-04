@@ -2,22 +2,25 @@ package com.recruit.data.pojo;
 
 import java.util.Date;
 
+/**
+ * @table resume_language 简历语言表
+ */
 public class ResumeLanguage {
-    private Integer id;
+    private Integer id;         // 主键id
 
-    private Integer resumeId;
+    private Integer resumeId;   // 简历表主键
 
-    private String name;
+    private String name;        // 语言名称
 
-    private Byte oralLevel;
+    private Byte oralLevel;     // 口语等级：1-一般，2-熟练，3-精通
 
-    private Byte writeLevel;
+    private Byte writeLevel;    // 书写等级：1-一般，2-熟练，3-精通
 
-    private Byte readLevel;
+    private Byte readLevel;     // 阅读等级：1-一般，2-熟练，3-精通
 
-    private String testName;
+    private String testName;    // 等级考试名称
 
-    private Integer testGrade;
+    private Integer testGrade;  // 等级考试成绩
 
     private Date createTime;
 

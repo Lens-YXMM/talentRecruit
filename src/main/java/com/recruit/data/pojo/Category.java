@@ -2,22 +2,25 @@ package com.recruit.data.pojo;
 
 import java.util.Date;
 
+/**
+ * @table sys_category 职位分类表
+ */
 public class Category {
-    private Integer id;
+    private Integer id;         // 主键id
 
-    private Integer parentId;
+    private Integer parentId;   // 父id
 
-    private String name;
+    private String name;        // 类别名称
 
-    private Boolean status;
+    private Byte status;        // 类别状态0-弃用，默认1-启用
 
-    private Integer sortOrder;
+    private Integer sortOrder;  // 排序编号，用于同类别排序，数值相同则自然排序
 
     private Date createTime;
 
     private Date updateTime;
 
-    public Category(Integer id, Integer parentId, String name, Boolean status, Integer sortOrder, Date createTime, Date updateTime) {
+    public Category(Integer id, Integer parentId, String name, Byte status, Integer sortOrder, Date createTime, Date updateTime) {
         this.id = id;
         this.parentId = parentId;
         this.name = name;
@@ -55,11 +58,11 @@ public class Category {
         this.name = name == null ? null : name.trim();
     }
 
-    public Boolean getStatus() {
+    public Byte getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(Byte status) {
         this.status = status;
     }
 

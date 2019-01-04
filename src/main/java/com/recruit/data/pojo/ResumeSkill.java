@@ -2,14 +2,17 @@ package com.recruit.data.pojo;
 
 import java.util.Date;
 
+/**
+ * @table resume_skill 简历技能表
+ */
 public class ResumeSkill {
-    private Integer id;
+    private Integer id;         // 主键id
 
-    private Integer resumeId;
+    private Integer resumeId;   // 简历表主键
 
-    private String name;
+    private String name;        // 技能名称
 
-    private Byte level;
+    private Byte level;         // 技能等级：1-一般，2-熟练，3-精通
 
     private Date createTime;
 

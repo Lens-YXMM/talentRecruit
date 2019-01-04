@@ -2,32 +2,35 @@ package com.recruit.data.pojo;
 
 import java.util.Date;
 
+/**
+ * @table sys_employee 职员信息表
+ */
 public class Employee {
-    private Integer id;
+    private Integer id;             // 主键id
 
-    private Integer jobId;
+    private Integer jobId;          // 职位表主键
 
-    private Integer deptId;
+    private Integer deptId;         // 部门表主键
 
-    private Integer location;
+    private Integer location;       // 所在地区编号
 
-    private String name;
+    private String name;            // 员工姓名
 
-    private Byte gender;
+    private Byte gender;            // 员工性别，0-女，1-男
 
-    private Byte status;
+    private Byte status;            // 入职状态：0-实习（包括管培生），1-试用，2-正式，3-离职
 
-    private Date traineeStart;
+    private Date traineeStart;      // 实习开始日期
 
-    private Date traineeEnd;
+    private Date traineeEnd;        // 实习结束日期
 
-    private Date probationStart;
+    private Date probationStart;    // 试用开始日期
 
-    private Date probationEnd;
+    private Date probationEnd;      // 试用结束日期
 
-    private Date regularDate;
+    private Date regularDate;       // 转正日期
 
-    private Date dimissionDate;
+    private Date dimissionDate;     // 离职日期
 
     private Date createTime;
 

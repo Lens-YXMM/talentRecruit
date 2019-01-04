@@ -2,28 +2,31 @@ package com.recruit.data.pojo;
 
 import java.util.Date;
 
+/**
+ * @table sys_job 职位信息表
+ */
 public class Job {
-    private Integer id;
+    private Integer id;             // 主键id
 
-    private Integer categoryId;
+    private Integer categoryId;     // 分类表主键
 
-    private Integer deptId;
+    private Integer deptId;         // 部门表主键
 
-    private String name;
+    private String name;            // 职位名称
 
-    private Integer location;
+    private Integer location;       // 职位所在城市
 
-    private String responsibility;
+    private String responsibility;  // 职位内容、职责
 
-    private String requirement;
+    private String requirement;     // 职位要求
 
-    private Byte recruitType;
+    private Byte recruitType;       // 招收类型：0-经验不限，1- 实习生，2-应届毕业生，3- 3年及一下，4- 3-5年，5- 5-10年，6-10年以上
 
-    private Byte recruitEducation;
+    private Byte recruitEducation;  // 招收学历要求：1-博士，2-硕士，3-本科，4-大专
 
-    private Integer recruitNum;
+    private Integer recruitNum;     // 招收人数
 
-    private Byte status;
+    private Byte status;            // 职位状态：0-停用，默认1-启用
 
     private Date createTime;
 

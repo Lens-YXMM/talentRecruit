@@ -2,22 +2,25 @@ package com.recruit.data.pojo;
 
 import java.util.Date;
 
+/**
+ * @table resume_award 简历所获奖项表
+ */
 public class ResumeAward {
-    private Integer id;
+    private Integer id;         // 主键id
 
-    private Integer resumeId;
+    private Integer resumeId;   // 简历表主键
 
-    private String name;
+    private String name;        // 奖项名称
 
-    private Byte type;
+    private Byte type;          // 奖项类型：1-竞赛获奖，2-奖学金
 
-    private Byte awardLevel;
+    private Byte awardLevel;    // 奖项级别：1-国际级，2-国家级，3-省市级，4-院级
 
-    private String prizeLevel;
+    private String prizeLevel;  // 奖项等级，如：一等奖，特等奖等
 
-    private Date awardDate;
+    private Date awardDate;     // 获奖日期，以此字段倒序排序
 
-    private String remark;
+    private String remark;      // 奖项详细信息（备注）
 
     private Date createTime;
 

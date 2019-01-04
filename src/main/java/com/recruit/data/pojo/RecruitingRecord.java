@@ -2,42 +2,45 @@ package com.recruit.data.pojo;
 
 import java.util.Date;
 
+/**
+ * @table sys_recruiting_record 应聘记录表
+ */
 public class RecruitingRecord {
-    private Integer id;
+    private Integer id;                 // 主键id
 
-    private Integer userId;
+    private Integer userId;             // 用户表主键
 
-    private Integer jobId;
+    private Integer jobId;              // 职位表主键
 
-    private String department;
+    private String department;          // 所选职位所在部门
 
-    private String location;
+    private String location;            // 所选职位所在地区
 
-    private Byte status;
+    private Byte status;                // 当前阶段：0-简历初筛，1-笔试，2-面试，3-入职
 
-    private Byte resumePass;
+    private Byte resumePass;            // 简历初筛是否通过，1-通过，0-不通过
 
-    private Date resumeDate;
+    private Date resumeDate;            // 简历初筛通过日期
 
-    private Byte examGrade;
+    private Byte examGrade;             // 笔试成绩
 
-    private Date examDate;
+    private Date examDate;              // 笔试日期
 
-    private Byte examPass;
+    private Byte examPass;              // 笔试是否通过，0-未通过，1-已通过
 
-    private String interviewRecord;
+    private String interviewRecord;     // 面试情况记录
 
-    private Date interviewDate;
+    private Date interviewDate;         // 面试日期
 
-    private Byte interviewPass;
+    private Byte interviewPass;         // 面试是否通过，0-未通过，1-已通过
 
-    private Byte healthy;
+    private Byte healthy;               // 体检是否通过，0-未通过，1-已通过
 
-    private Date trainingStart;
+    private Date trainingStart;         // 培训开始日期
 
-    private Date trainingEnd;
+    private Date trainingEnd;           // 培训结束日期
 
-    private String trainingRecord;
+    private String trainingRecord;      // 培训记录
 
     private Date createTime;
 

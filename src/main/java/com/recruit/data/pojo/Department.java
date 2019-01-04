@@ -2,24 +2,27 @@ package com.recruit.data.pojo;
 
 import java.util.Date;
 
+/**
+ * @table sys_department 部门信息表
+ */
 public class Department {
-    private Integer id;
+    private Integer id;             // 主键id
 
-    private String introduction;
+    private String name;            // 部门名称
 
-    private Integer location;
+    private Integer location;       // 部门所在地编码
 
-    private Integer number;
+    private Integer number;         // 部门人数
 
-    private Byte status;
+    private Byte status;            // 部门状态，默认1-启用，0-弃用
 
     private Date createTime;
 
     private Date updateTime;
 
-    public Department(Integer id, String introduction, Integer location, Integer number, Byte status, Date createTime, Date updateTime) {
+    public Department(Integer id, String name, Integer location, Integer number, Byte status, Date createTime, Date updateTime) {
         this.id = id;
-        this.introduction = introduction;
+        this.name = name;
         this.location = location;
         this.number = number;
         this.status = status;
@@ -39,12 +42,12 @@ public class Department {
         this.id = id;
     }
 
-    public String getIntroduction() {
-        return introduction;
+    public String getname() {
+        return name;
     }
 
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction == null ? null : introduction.trim();
+    public void setname(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
     public Integer getLocation() {

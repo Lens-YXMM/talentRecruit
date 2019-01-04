@@ -2,20 +2,23 @@ package com.recruit.data.pojo;
 
 import java.util.Date;
 
+/**
+ * @table resume_project 简历项目经验表
+ */
 public class ResumeProject {
-    private Integer id;
+    private Integer id;         // 主键id
 
-    private Integer resumeId;
+    private Integer resumeId;   // 简历表主键
 
-    private String name;
+    private String name;        // 项目名称
 
-    private String role;
+    private String role;        // 职责
 
-    private String detail;
+    private String detail;      // 详细内容包括项目介绍和项目成果
 
-    private Date start;
+    private Date start;         // 开始日期，以此字段倒序排序
 
-    private String end;
+    private String end;         // 结束日期，若还未结束，则存入“至今”
 
     private Date createTime;
 

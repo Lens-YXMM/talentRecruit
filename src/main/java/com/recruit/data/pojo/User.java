@@ -3,26 +3,29 @@ package com.recruit.data.pojo;
 import java.lang.Byte;
 import java.util.Date;
 
+/**
+ * @table sys_user 用户表
+ */
 public class User {
-    private Integer id;
+    private Integer id;         // 主键id
 
-    private String username;
+    private String username;    // 用户名(唯一索引）
 
-    private String password;
+    private String password;    // 密码
 
-    private String phone;
+    private String phone;       // 手机号码
 
-    private String email;
+    private String email;       // 邮箱地址
 
-    private String name;
+    private String name;        // 姓名
 
-    private Byte gender;
+    private Byte gender;        // 性别默认1-男，0-女
 
-    private Date birthday;
+    private Date birthday;      // 生日，1999-1-1
 
-    private Integer role;
+    private Integer role;       // 角色0-管理员，1-人力资源专员，2-个人用户
 
-    private Byte blacked;
+    private Byte blacked;       // 是否拉黑，默认为0-未拉黑，1-已拉黑
 
     private Date createTime;
 

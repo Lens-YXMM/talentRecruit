@@ -2,30 +2,33 @@ package com.recruit.data.pojo;
 
 import java.util.Date;
 
+/**
+ * @table resume_education 简历教育经历表
+ */
 public class ResumeEducation {
-    private Integer id;
+    private Integer id;         // 主键id
 
-    private Integer resumeId;
+    private Integer resumeId;   // 简历表主键
 
-    private String name;
+    private String name;        // 学校名称
 
-    private Date start;
+    private Date start;         // 入学年份，2014
 
-    private Date end;
+    private Date end;           // 毕业年份，2018
 
-    private String department;
+    private String department;  // 所在学院名称
 
-    private String major;
+    private String major;       // 所学专业名称
 
-    private Boolean level;
+    private Byte level;         // 毕业后所得学历1-博士，2-硕士，3-本科，4-大专，5-高中，6-其他
 
-    private Boolean ranking;
+    private Byte ranking;       // 成绩排名1-Top5, 2-Top10, 3-Top25, 4-Top50, 5-其他
 
     private Date createTime;
 
     private Date updateTime;
 
-    public ResumeEducation(Integer id, Integer resumeId, String name, Date start, Date end, String department, String major, Boolean level, Boolean ranking, Date createTime, Date updateTime) {
+    public ResumeEducation(Integer id, Integer resumeId, String name, Date start, Date end, String department, String major, Byte level, Byte ranking, Date createTime, Date updateTime) {
         this.id = id;
         this.resumeId = resumeId;
         this.name = name;
@@ -99,19 +102,19 @@ public class ResumeEducation {
         this.major = major == null ? null : major.trim();
     }
 
-    public Boolean getLevel() {
+    public Byte getLevel() {
         return level;
     }
 
-    public void setLevel(Boolean level) {
+    public void setLevel(Byte level) {
         this.level = level;
     }
 
-    public Boolean getRanking() {
+    public Byte getRanking() {
         return ranking;
     }
 
-    public void setRanking(Boolean ranking) {
+    public void setRanking(Byte ranking) {
         this.ranking = ranking;
     }
 
