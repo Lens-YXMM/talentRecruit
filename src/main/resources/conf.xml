@@ -19,22 +19,22 @@
     </environments>
 
     <mappers>
-        <mapper resource="mapping/userMapper.xml"/>
-        <mapper resource="mapping/jobMapper.xml"/>
-        <mapper resource="mapping/categoryMapper.xml"/>
-        <mapper resource="mapping/departmentMapper.xml"/>
-        <mapper resource="mapping/resumeMapper.xml"/>
-        <mapper resource="mapping/resumeJobPreferranceMapper.xml"/>
-        <mapper resource="mapping/resumeEducationMapper.xml"/>
-        <mapper resource="mapping/resumeWorkMapper.xml"/>
-        <mapper resource="mapping/resumeProjectMapper.xml"/>
-        <mapper resource="mapping/resumeAwardMapper.xml"/>
-        <mapper resource="mapping/resumeSkillMapper.xml"/>
-        <mapper resource="mapping/resumeLanguageMapper.xml"/>
-        <mapper resource="mapping/resumeOtherMapper.xml"/>
-        <mapper resource="mapping/recruitingRecordMapper.xml"/>
-        <mapper resource="mapping/employeeMapper.xml"/>
-        <mapper resource="mapping/areaMapper.xml"/>
-        <mapper resource="mapping/schoolMapper.xml"/>
+        <mapper resource="mappers/userMapper.xml"/>
+        <mapper resource="mappers/jobMapper.xml"/>
+        <mapper resource="mappers/categoryMapper.xml"/>
+        <mapper resource="mappers/departmentMapper.xml"/>
+        <mapper resource="mappers/resumeMapper.xml"/>
+        <mapper resource="mappers/resumeJobPreferranceMapper.xml"/>
+        <mapper resource="mappers/resumeEducationMapper.xml"/>
+        <mapper resource="mappers/resumeWorkMapper.xml"/>
+        <mapper resource="mappers/resumeProjectMapper.xml"/>
+        <mapper resource="mappers/resumeAwardMapper.xml"/>
+        <mapper resource="mappers/resumeSkillMapper.xml"/>
+        <mapper resource="mappers/resumeLanguageMapper.xml"/>
+        <mapper resource="mappers/resumeOtherMapper.xml"/>
+        <mapper resource="mappers/recruitingRecordMapper.xml"/>
+        <mapper resource="mappers/employeeMapper.xml"/>
+        <mapper resource="mappers/areaMapper.xml"/>
+        <mapper resource="mappers/schoolMapper.xml"/>
     </mappers>
 </configuration>

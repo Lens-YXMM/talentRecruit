@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.recruit.data.dao.ResumeAwardMapper">
+  <resultMap id="BaseResultMap" type="com.recruit.data.pojo.ResumeAward">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="resume_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="type" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="award_level" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="prize_level" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="award_date" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, resume_id, name, type, award_level, prize_level, award_date, remark, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from resume_award
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from resume_award
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.recruit.data.pojo.ResumeAward">
+    insert into resume_award (id, resume_id, name, 
+      type, award_level, prize_level, 
+      award_date, remark, create_time, 
+      update_time)
+    values (#{id,jdbcType=INTEGER}, #{resumeId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{type,jdbcType=TINYINT}, #{awardLevel,jdbcType=TINYINT}, #{prizeLevel,jdbcType=VARCHAR}, 
+      #{awardDate,jdbcType=DATE}, #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.recruit.data.pojo.ResumeAward">
+    insert into resume_award
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="resumeId != null">
+        resume_id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="awardLevel != null">
+        award_level,
+      </if>
+      <if test="prizeLevel != null">
+        prize_level,
+      </if>
+      <if test="awardDate != null">
+        award_date,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="resumeId != null">
+        #{resumeId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="awardLevel != null">
+        #{awardLevel,jdbcType=TINYINT},
+      </if>
+      <if test="prizeLevel != null">
+        #{prizeLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="awardDate != null">
+        #{awardDate,jdbcType=DATE},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.recruit.data.pojo.ResumeAward">
+    update resume_award
+    <set>
+      <if test="resumeId != null">
+        resume_id = #{resumeId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="awardLevel != null">
+        award_level = #{awardLevel,jdbcType=TINYINT},
+      </if>
+      <if test="prizeLevel != null">
+        prize_level = #{prizeLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="awardDate != null">
+        award_date = #{awardDate,jdbcType=DATE},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.recruit.data.pojo.ResumeAward">
+    update resume_award
+    set resume_id = #{resumeId,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=TINYINT},
+      award_level = #{awardLevel,jdbcType=TINYINT},
+      prize_level = #{prizeLevel,jdbcType=VARCHAR},
+      award_date = #{awardDate,jdbcType=DATE},
+      remark = #{remark,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

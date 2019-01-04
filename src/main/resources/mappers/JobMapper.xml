@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.recruit.data.dao.JobMapper">
+  <resultMap id="BaseResultMap" type="com.recruit.data.pojo.Job">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="category_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="dept_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="location" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="responsibility" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="requirement" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="recruit_type" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="recruit_education" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="recruit_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, category_id, dept_id, name, location, responsibility, requirement, recruit_type, 
+    recruit_education, recruit_num, status, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_job
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sys_job
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.recruit.data.pojo.Job">
+    insert into sys_job (id, category_id, dept_id, 
+      name, location, responsibility, 
+      requirement, recruit_type, recruit_education, 
+      recruit_num, status, create_time, 
+      update_time)
+    values (#{id,jdbcType=INTEGER}, #{categoryId,jdbcType=INTEGER}, #{deptId,jdbcType=INTEGER}, 
+      #{name,jdbcType=VARCHAR}, #{location,jdbcType=INTEGER}, #{responsibility,jdbcType=VARCHAR}, 
+      #{requirement,jdbcType=VARCHAR}, #{recruitType,jdbcType=TINYINT}, #{recruitEducation,jdbcType=TINYINT}, 
+      #{recruitNum,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.recruit.data.pojo.Job">
+    insert into sys_job
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="categoryId != null">
+        category_id,
+      </if>
+      <if test="deptId != null">
+        dept_id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="location != null">
+        location,
+      </if>
+      <if test="responsibility != null">
+        responsibility,
+      </if>
+      <if test="requirement != null">
+        requirement,
+      </if>
+      <if test="recruitType != null">
+        recruit_type,
+      </if>
+      <if test="recruitEducation != null">
+        recruit_education,
+      </if>
+      <if test="recruitNum != null">
+        recruit_num,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="categoryId != null">
+        #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=INTEGER},
+      </if>
+      <if test="responsibility != null">
+        #{responsibility,jdbcType=VARCHAR},
+      </if>
+      <if test="requirement != null">
+        #{requirement,jdbcType=VARCHAR},
+      </if>
+      <if test="recruitType != null">
+        #{recruitType,jdbcType=TINYINT},
+      </if>
+      <if test="recruitEducation != null">
+        #{recruitEducation,jdbcType=TINYINT},
+      </if>
+      <if test="recruitNum != null">
+        #{recruitNum,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.recruit.data.pojo.Job">
+    update sys_job
+    <set>
+      <if test="categoryId != null">
+        category_id = #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="deptId != null">
+        dept_id = #{deptId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        location = #{location,jdbcType=INTEGER},
+      </if>
+      <if test="responsibility != null">
+        responsibility = #{responsibility,jdbcType=VARCHAR},
+      </if>
+      <if test="requirement != null">
+        requirement = #{requirement,jdbcType=VARCHAR},
+      </if>
+      <if test="recruitType != null">
+        recruit_type = #{recruitType,jdbcType=TINYINT},
+      </if>
+      <if test="recruitEducation != null">
+        recruit_education = #{recruitEducation,jdbcType=TINYINT},
+      </if>
+      <if test="recruitNum != null">
+        recruit_num = #{recruitNum,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.recruit.data.pojo.Job">
+    update sys_job
+    set category_id = #{categoryId,jdbcType=INTEGER},
+      dept_id = #{deptId,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      location = #{location,jdbcType=INTEGER},
+      responsibility = #{responsibility,jdbcType=VARCHAR},
+      requirement = #{requirement,jdbcType=VARCHAR},
+      recruit_type = #{recruitType,jdbcType=TINYINT},
+      recruit_education = #{recruitEducation,jdbcType=TINYINT},
+      recruit_num = #{recruitNum,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

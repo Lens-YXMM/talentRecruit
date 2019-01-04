@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.recruit.data.dao.ResumeJobPreferranceMapper">
+  <resultMap id="BaseResultMap" type="com.recruit.data.pojo.ResumeJobPreferrance">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="resume_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="job_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="salary_range" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="first_city" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="second_city" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="employ_date" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, resume_id, job_id, salary_range, first_city, second_city, employ_date, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from resume_job_preferrance
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from resume_job_preferrance
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.recruit.data.pojo.ResumeJobPreferrance">
+    insert into resume_job_preferrance (id, resume_id, job_id, 
+      salary_range, first_city, second_city, 
+      employ_date, create_time, update_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{resumeId,jdbcType=INTEGER}, #{jobId,jdbcType=INTEGER}, 
+      #{salaryRange,jdbcType=VARCHAR}, #{firstCity,jdbcType=INTEGER}, #{secondCity,jdbcType=INTEGER}, 
+      #{employDate,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.recruit.data.pojo.ResumeJobPreferrance">
+    insert into resume_job_preferrance
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="resumeId != null">
+        resume_id,
+      </if>
+      <if test="jobId != null">
+        job_id,
+      </if>
+      <if test="salaryRange != null">
+        salary_range,
+      </if>
+      <if test="firstCity != null">
+        first_city,
+      </if>
+      <if test="secondCity != null">
+        second_city,
+      </if>
+      <if test="employDate != null">
+        employ_date,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="resumeId != null">
+        #{resumeId,jdbcType=INTEGER},
+      </if>
+      <if test="jobId != null">
+        #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="salaryRange != null">
+        #{salaryRange,jdbcType=VARCHAR},
+      </if>
+      <if test="firstCity != null">
+        #{firstCity,jdbcType=INTEGER},
+      </if>
+      <if test="secondCity != null">
+        #{secondCity,jdbcType=INTEGER},
+      </if>
+      <if test="employDate != null">
+        #{employDate,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.recruit.data.pojo.ResumeJobPreferrance">
+    update resume_job_preferrance
+    <set>
+      <if test="resumeId != null">
+        resume_id = #{resumeId,jdbcType=INTEGER},
+      </if>
+      <if test="jobId != null">
+        job_id = #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="salaryRange != null">
+        salary_range = #{salaryRange,jdbcType=VARCHAR},
+      </if>
+      <if test="firstCity != null">
+        first_city = #{firstCity,jdbcType=INTEGER},
+      </if>
+      <if test="secondCity != null">
+        second_city = #{secondCity,jdbcType=INTEGER},
+      </if>
+      <if test="employDate != null">
+        employ_date = #{employDate,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.recruit.data.pojo.ResumeJobPreferrance">
+    update resume_job_preferrance
+    set resume_id = #{resumeId,jdbcType=INTEGER},
+      job_id = #{jobId,jdbcType=INTEGER},
+      salary_range = #{salaryRange,jdbcType=VARCHAR},
+      first_city = #{firstCity,jdbcType=INTEGER},
+      second_city = #{secondCity,jdbcType=INTEGER},
+      employ_date = #{employDate,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

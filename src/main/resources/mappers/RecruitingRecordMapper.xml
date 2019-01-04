@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.recruit.data.dao.RecruitingRecordMapper">
+  <resultMap id="BaseResultMap" type="com.recruit.data.pojo.RecruitingRecord">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="user_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="job_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="department" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="location" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="resume_pass" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="resume_date" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="exam_grade" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="exam_date" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="exam_pass" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="interview_record" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="interview_date" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="interview_pass" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="healthy" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="training_start" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="training_end" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="training_record" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, job_id, department, location, status, resume_pass, resume_date, exam_grade, 
+    exam_date, exam_pass, interview_record, interview_date, interview_pass, healthy, 
+    training_start, training_end, training_record, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_recruiting_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sys_recruiting_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.recruit.data.pojo.RecruitingRecord">
+    insert into sys_recruiting_record (id, user_id, job_id, 
+      department, location, status, 
+      resume_pass, resume_date, exam_grade, 
+      exam_date, exam_pass, interview_record, 
+      interview_date, interview_pass, healthy, 
+      training_start, training_end, training_record, 
+      create_time, update_time)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{jobId,jdbcType=INTEGER}, 
+      #{department,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, 
+      #{resumePass,jdbcType=TINYINT}, #{resumeDate,jdbcType=DATE}, #{examGrade,jdbcType=TINYINT}, 
+      #{examDate,jdbcType=DATE}, #{examPass,jdbcType=TINYINT}, #{interviewRecord,jdbcType=VARCHAR}, 
+      #{interviewDate,jdbcType=DATE}, #{interviewPass,jdbcType=TINYINT}, #{healthy,jdbcType=TINYINT}, 
+      #{trainingStart,jdbcType=DATE}, #{trainingEnd,jdbcType=DATE}, #{trainingRecord,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.recruit.data.pojo.RecruitingRecord">
+    insert into sys_recruiting_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="jobId != null">
+        job_id,
+      </if>
+      <if test="department != null">
+        department,
+      </if>
+      <if test="location != null">
+        location,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="resumePass != null">
+        resume_pass,
+      </if>
+      <if test="resumeDate != null">
+        resume_date,
+      </if>
+      <if test="examGrade != null">
+        exam_grade,
+      </if>
+      <if test="examDate != null">
+        exam_date,
+      </if>
+      <if test="examPass != null">
+        exam_pass,
+      </if>
+      <if test="interviewRecord != null">
+        interview_record,
+      </if>
+      <if test="interviewDate != null">
+        interview_date,
+      </if>
+      <if test="interviewPass != null">
+        interview_pass,
+      </if>
+      <if test="healthy != null">
+        healthy,
+      </if>
+      <if test="trainingStart != null">
+        training_start,
+      </if>
+      <if test="trainingEnd != null">
+        training_end,
+      </if>
+      <if test="trainingRecord != null">
+        training_record,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="jobId != null">
+        #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="department != null">
+        #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="resumePass != null">
+        #{resumePass,jdbcType=TINYINT},
+      </if>
+      <if test="resumeDate != null">
+        #{resumeDate,jdbcType=DATE},
+      </if>
+      <if test="examGrade != null">
+        #{examGrade,jdbcType=TINYINT},
+      </if>
+      <if test="examDate != null">
+        #{examDate,jdbcType=DATE},
+      </if>
+      <if test="examPass != null">
+        #{examPass,jdbcType=TINYINT},
+      </if>
+      <if test="interviewRecord != null">
+        #{interviewRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="interviewDate != null">
+        #{interviewDate,jdbcType=DATE},
+      </if>
+      <if test="interviewPass != null">
+        #{interviewPass,jdbcType=TINYINT},
+      </if>
+      <if test="healthy != null">
+        #{healthy,jdbcType=TINYINT},
+      </if>
+      <if test="trainingStart != null">
+        #{trainingStart,jdbcType=DATE},
+      </if>
+      <if test="trainingEnd != null">
+        #{trainingEnd,jdbcType=DATE},
+      </if>
+      <if test="trainingRecord != null">
+        #{trainingRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.recruit.data.pojo.RecruitingRecord">
+    update sys_recruiting_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="jobId != null">
+        job_id = #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="department != null">
+        department = #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        location = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="resumePass != null">
+        resume_pass = #{resumePass,jdbcType=TINYINT},
+      </if>
+      <if test="resumeDate != null">
+        resume_date = #{resumeDate,jdbcType=DATE},
+      </if>
+      <if test="examGrade != null">
+        exam_grade = #{examGrade,jdbcType=TINYINT},
+      </if>
+      <if test="examDate != null">
+        exam_date = #{examDate,jdbcType=DATE},
+      </if>
+      <if test="examPass != null">
+        exam_pass = #{examPass,jdbcType=TINYINT},
+      </if>
+      <if test="interviewRecord != null">
+        interview_record = #{interviewRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="interviewDate != null">
+        interview_date = #{interviewDate,jdbcType=DATE},
+      </if>
+      <if test="interviewPass != null">
+        interview_pass = #{interviewPass,jdbcType=TINYINT},
+      </if>
+      <if test="healthy != null">
+        healthy = #{healthy,jdbcType=TINYINT},
+      </if>
+      <if test="trainingStart != null">
+        training_start = #{trainingStart,jdbcType=DATE},
+      </if>
+      <if test="trainingEnd != null">
+        training_end = #{trainingEnd,jdbcType=DATE},
+      </if>
+      <if test="trainingRecord != null">
+        training_record = #{trainingRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.recruit.data.pojo.RecruitingRecord">
+    update sys_recruiting_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      job_id = #{jobId,jdbcType=INTEGER},
+      department = #{department,jdbcType=VARCHAR},
+      location = #{location,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT},
+      resume_pass = #{resumePass,jdbcType=TINYINT},
+      resume_date = #{resumeDate,jdbcType=DATE},
+      exam_grade = #{examGrade,jdbcType=TINYINT},
+      exam_date = #{examDate,jdbcType=DATE},
+      exam_pass = #{examPass,jdbcType=TINYINT},
+      interview_record = #{interviewRecord,jdbcType=VARCHAR},
+      interview_date = #{interviewDate,jdbcType=DATE},
+      interview_pass = #{interviewPass,jdbcType=TINYINT},
+      healthy = #{healthy,jdbcType=TINYINT},
+      training_start = #{trainingStart,jdbcType=DATE},
+      training_end = #{trainingEnd,jdbcType=DATE},
+      training_record = #{trainingRecord,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

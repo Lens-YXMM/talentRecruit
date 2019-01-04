@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.recruit.data.dao.ResumeMapper">
+  <resultMap id="BaseResultMap" type="com.recruit.data.pojo.Resume">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="user_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="native_province" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="native_district" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="marital_status" javaType="java.lang.Boolean" jdbcType="BIT" />
+      <arg column="education_level" javaType="java.lang.Boolean" jdbcType="BIT" />
+      <arg column="school" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="current_location" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="personal_state" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="preview" javaType="java.lang.String" jdbcType="VARECHAR" />
+      <arg column="default_post" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="attachment" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, native_province, native_district, marital_status, education_level, school, 
+    current_location, personal_state, preview, default_post, attachment, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_resume
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sys_resume
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.recruit.data.pojo.Resume">
+    insert into sys_resume (id, user_id, native_province, 
+      native_district, marital_status, education_level, 
+      school, current_location, personal_state, 
+      preview, default_post, attachment, 
+      create_time, update_time)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{nativeProvince,jdbcType=INTEGER}, 
+      #{nativeDistrict,jdbcType=INTEGER}, #{maritalStatus,jdbcType=BIT}, #{educationLevel,jdbcType=BIT}, 
+      #{school,jdbcType=VARCHAR}, #{currentLocation,jdbcType=INTEGER}, #{personalState,jdbcType=VARCHAR}, 
+      #{preview,jdbcType=VARECHAR}, #{defaultPost,jdbcType=TINYINT}, #{attachment,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.recruit.data.pojo.Resume">
+    insert into sys_resume
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="nativeProvince != null">
+        native_province,
+      </if>
+      <if test="nativeDistrict != null">
+        native_district,
+      </if>
+      <if test="maritalStatus != null">
+        marital_status,
+      </if>
+      <if test="educationLevel != null">
+        education_level,
+      </if>
+      <if test="school != null">
+        school,
+      </if>
+      <if test="currentLocation != null">
+        current_location,
+      </if>
+      <if test="personalState != null">
+        personal_state,
+      </if>
+      <if test="preview != null">
+        preview,
+      </if>
+      <if test="defaultPost != null">
+        default_post,
+      </if>
+      <if test="attachment != null">
+        attachment,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="nativeProvince != null">
+        #{nativeProvince,jdbcType=INTEGER},
+      </if>
+      <if test="nativeDistrict != null">
+        #{nativeDistrict,jdbcType=INTEGER},
+      </if>
+      <if test="maritalStatus != null">
+        #{maritalStatus,jdbcType=BIT},
+      </if>
+      <if test="educationLevel != null">
+        #{educationLevel,jdbcType=BIT},
+      </if>
+      <if test="school != null">
+        #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="currentLocation != null">
+        #{currentLocation,jdbcType=INTEGER},
+      </if>
+      <if test="personalState != null">
+        #{personalState,jdbcType=VARCHAR},
+      </if>
+      <if test="preview != null">
+        #{preview,jdbcType=VARECHAR},
+      </if>
+      <if test="defaultPost != null">
+        #{defaultPost,jdbcType=TINYINT},
+      </if>
+      <if test="attachment != null">
+        #{attachment,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.recruit.data.pojo.Resume">
+    update sys_resume
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="nativeProvince != null">
+        native_province = #{nativeProvince,jdbcType=INTEGER},
+      </if>
+      <if test="nativeDistrict != null">
+        native_district = #{nativeDistrict,jdbcType=INTEGER},
+      </if>
+      <if test="maritalStatus != null">
+        marital_status = #{maritalStatus,jdbcType=BIT},
+      </if>
+      <if test="educationLevel != null">
+        education_level = #{educationLevel,jdbcType=BIT},
+      </if>
+      <if test="school != null">
+        school = #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="currentLocation != null">
+        current_location = #{currentLocation,jdbcType=INTEGER},
+      </if>
+      <if test="personalState != null">
+        personal_state = #{personalState,jdbcType=VARCHAR},
+      </if>
+      <if test="preview != null">
+        preview = #{preview,jdbcType=VARECHAR},
+      </if>
+      <if test="defaultPost != null">
+        default_post = #{defaultPost,jdbcType=TINYINT},
+      </if>
+      <if test="attachment != null">
+        attachment = #{attachment,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.recruit.data.pojo.Resume">
+    update sys_resume
+    set user_id = #{userId,jdbcType=INTEGER},
+      native_province = #{nativeProvince,jdbcType=INTEGER},
+      native_district = #{nativeDistrict,jdbcType=INTEGER},
+      marital_status = #{maritalStatus,jdbcType=BIT},
+      education_level = #{educationLevel,jdbcType=BIT},
+      school = #{school,jdbcType=VARCHAR},
+      current_location = #{currentLocation,jdbcType=INTEGER},
+      personal_state = #{personalState,jdbcType=VARCHAR},
+      preview = #{preview,jdbcType=VARECHAR},
+      default_post = #{defaultPost,jdbcType=TINYINT},
+      attachment = #{attachment,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

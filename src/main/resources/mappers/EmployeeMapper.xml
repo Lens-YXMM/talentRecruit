@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.recruit.data.dao.EmployeeMapper">
+  <resultMap id="BaseResultMap" type="com.recruit.data.pojo.Employee">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="job_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="dept_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="location" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="gender" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="trainee_start" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="trainee_end" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="probation_start" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="probation_end" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="regular_date" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="dimission_date" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, job_id, dept_id, location, name, gender, status, trainee_start, trainee_end, 
+    probation_start, probation_end, regular_date, dimission_date, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_employee
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sys_employee
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.recruit.data.pojo.Employee">
+    insert into sys_employee (id, job_id, dept_id, 
+      location, name, gender, 
+      status, trainee_start, trainee_end, 
+      probation_start, probation_end, regular_date, 
+      dimission_date, create_time, update_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{jobId,jdbcType=INTEGER}, #{deptId,jdbcType=INTEGER}, 
+      #{location,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{gender,jdbcType=TINYINT}, 
+      #{status,jdbcType=TINYINT}, #{traineeStart,jdbcType=DATE}, #{traineeEnd,jdbcType=DATE}, 
+      #{probationStart,jdbcType=DATE}, #{probationEnd,jdbcType=DATE}, #{regularDate,jdbcType=DATE}, 
+      #{dimissionDate,jdbcType=DATE}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.recruit.data.pojo.Employee">
+    insert into sys_employee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="jobId != null">
+        job_id,
+      </if>
+      <if test="deptId != null">
+        dept_id,
+      </if>
+      <if test="location != null">
+        location,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="traineeStart != null">
+        trainee_start,
+      </if>
+      <if test="traineeEnd != null">
+        trainee_end,
+      </if>
+      <if test="probationStart != null">
+        probation_start,
+      </if>
+      <if test="probationEnd != null">
+        probation_end,
+      </if>
+      <if test="regularDate != null">
+        regular_date,
+      </if>
+      <if test="dimissionDate != null">
+        dimission_date,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="jobId != null">
+        #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=INTEGER},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="traineeStart != null">
+        #{traineeStart,jdbcType=DATE},
+      </if>
+      <if test="traineeEnd != null">
+        #{traineeEnd,jdbcType=DATE},
+      </if>
+      <if test="probationStart != null">
+        #{probationStart,jdbcType=DATE},
+      </if>
+      <if test="probationEnd != null">
+        #{probationEnd,jdbcType=DATE},
+      </if>
+      <if test="regularDate != null">
+        #{regularDate,jdbcType=DATE},
+      </if>
+      <if test="dimissionDate != null">
+        #{dimissionDate,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.recruit.data.pojo.Employee">
+    update sys_employee
+    <set>
+      <if test="jobId != null">
+        job_id = #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="deptId != null">
+        dept_id = #{deptId,jdbcType=INTEGER},
+      </if>
+      <if test="location != null">
+        location = #{location,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="traineeStart != null">
+        trainee_start = #{traineeStart,jdbcType=DATE},
+      </if>
+      <if test="traineeEnd != null">
+        trainee_end = #{traineeEnd,jdbcType=DATE},
+      </if>
+      <if test="probationStart != null">
+        probation_start = #{probationStart,jdbcType=DATE},
+      </if>
+      <if test="probationEnd != null">
+        probation_end = #{probationEnd,jdbcType=DATE},
+      </if>
+      <if test="regularDate != null">
+        regular_date = #{regularDate,jdbcType=DATE},
+      </if>
+      <if test="dimissionDate != null">
+        dimission_date = #{dimissionDate,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.recruit.data.pojo.Employee">
+    update sys_employee
+    set job_id = #{jobId,jdbcType=INTEGER},
+      dept_id = #{deptId,jdbcType=INTEGER},
+      location = #{location,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=TINYINT},
+      status = #{status,jdbcType=TINYINT},
+      trainee_start = #{traineeStart,jdbcType=DATE},
+      trainee_end = #{traineeEnd,jdbcType=DATE},
+      probation_start = #{probationStart,jdbcType=DATE},
+      probation_end = #{probationEnd,jdbcType=DATE},
+      regular_date = #{regularDate,jdbcType=DATE},
+      dimission_date = #{dimissionDate,jdbcType=DATE},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
