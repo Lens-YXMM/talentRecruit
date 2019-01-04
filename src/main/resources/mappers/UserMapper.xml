@@ -9,7 +9,7 @@
       <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="gender" javaType="Java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="gender" javaType="java.lang.Byte" jdbcType="TINYINT" />
       <arg column="birthday" javaType="java.util.Date" jdbcType="DATE" />
       <arg column="role" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="blacked" javaType="java.lang.Byte" jdbcType="TINYINT" />
@@ -40,7 +40,7 @@
     values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
       #{gender,jdbcType=TINYINT}, #{birthday,jdbcType=DATE}, #{role,jdbcType=INTEGER}, 
-      #{blacked,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      #{blacked,jdbcType=TINYINT}, now(), now()
       )
   </insert>
   <insert id="insertSelective" parameterType="com.recruit.data.pojo.User">
@@ -115,10 +115,10 @@
         #{blacked,jdbcType=TINYINT},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
       <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
     </trim>
   </insert>
@@ -156,7 +156,7 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = now(),
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -173,7 +173,7 @@
       role = #{role,jdbcType=INTEGER},
       blacked = #{blacked,jdbcType=TINYINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -41,8 +41,7 @@
     values (#{id,jdbcType=INTEGER}, #{categoryId,jdbcType=INTEGER}, #{deptId,jdbcType=INTEGER}, 
       #{name,jdbcType=VARCHAR}, #{location,jdbcType=INTEGER}, #{responsibility,jdbcType=VARCHAR}, 
       #{requirement,jdbcType=VARCHAR}, #{recruitType,jdbcType=TINYINT}, #{recruitEducation,jdbcType=TINYINT}, 
-      #{recruitNum,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP})
+      #{recruitNum,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}, now(), now())
   </insert>
   <insert id="insertSelective" parameterType="com.recruit.data.pojo.Job">
     insert into sys_job
@@ -122,10 +121,10 @@
         #{status,jdbcType=TINYINT},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
       <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
     </trim>
   </insert>
@@ -166,7 +165,7 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = now(),
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -184,7 +183,7 @@
       recruit_num = #{recruitNum,jdbcType=INTEGER},
       status = #{status,jdbcType=TINYINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

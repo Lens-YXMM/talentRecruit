@@ -36,8 +36,7 @@
       update_time)
     values (#{id,jdbcType=INTEGER}, #{resumeId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
       #{type,jdbcType=TINYINT}, #{awardLevel,jdbcType=TINYINT}, #{prizeLevel,jdbcType=VARCHAR}, 
-      #{awardDate,jdbcType=DATE}, #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP})
+      #{awardDate,jdbcType=DATE}, #{remark,jdbcType=VARCHAR}, now(), now())
   </insert>
   <insert id="insertSelective" parameterType="com.recruit.data.pojo.ResumeAward">
     insert into resume_award
@@ -99,10 +98,10 @@
         #{remark,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
       <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
     </trim>
   </insert>
@@ -134,7 +133,7 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = now(),
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -149,7 +148,7 @@
       award_date = #{awardDate,jdbcType=DATE},
       remark = #{remark,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

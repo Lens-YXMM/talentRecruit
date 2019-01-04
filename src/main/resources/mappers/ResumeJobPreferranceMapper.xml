@@ -35,7 +35,7 @@
       )
     values (#{id,jdbcType=INTEGER}, #{resumeId,jdbcType=INTEGER}, #{jobId,jdbcType=INTEGER}, 
       #{salaryRange,jdbcType=VARCHAR}, #{firstCity,jdbcType=INTEGER}, #{secondCity,jdbcType=INTEGER}, 
-      #{employDate,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      #{employDate,jdbcType=TINYINT}, now(), now()
       )
   </insert>
   <insert id="insertSelective" parameterType="com.recruit.data.pojo.ResumeJobPreferrance">
@@ -92,10 +92,10 @@
         #{employDate,jdbcType=TINYINT},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
       <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
     </trim>
   </insert>
@@ -124,7 +124,7 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = now(),
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -138,7 +138,7 @@
       second_city = #{secondCity,jdbcType=INTEGER},
       employ_date = #{employDate,jdbcType=TINYINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

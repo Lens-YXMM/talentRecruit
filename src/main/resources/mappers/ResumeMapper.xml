@@ -12,7 +12,7 @@
       <arg column="school" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="current_location" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="personal_state" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="preview" javaType="java.lang.String" jdbcType="VARECHAR" />
+      <arg column="preview" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="default_post" javaType="java.lang.Byte" jdbcType="TINYINT" />
       <arg column="attachment" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
@@ -43,8 +43,8 @@
     values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{nativeProvince,jdbcType=INTEGER}, 
       #{nativeDistrict,jdbcType=INTEGER}, #{maritalStatus,jdbcType=BIT}, #{educationLevel,jdbcType=BIT}, 
       #{school,jdbcType=VARCHAR}, #{currentLocation,jdbcType=INTEGER}, #{personalState,jdbcType=VARCHAR}, 
-      #{preview,jdbcType=VARECHAR}, #{defaultPost,jdbcType=TINYINT}, #{attachment,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+      #{preview,jdbcType=VARCHAR}, #{defaultPost,jdbcType=TINYINT}, #{attachment,jdbcType=VARCHAR},
+      now(), now())
   </insert>
   <insert id="insertSelective" parameterType="com.recruit.data.pojo.Resume">
     insert into sys_resume
@@ -121,7 +121,7 @@
         #{personalState,jdbcType=VARCHAR},
       </if>
       <if test="preview != null">
-        #{preview,jdbcType=VARECHAR},
+        #{preview,jdbcType=VARCHAR},
       </if>
       <if test="defaultPost != null">
         #{defaultPost,jdbcType=TINYINT},
@@ -130,10 +130,10 @@
         #{attachment,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
       <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
     </trim>
   </insert>
@@ -165,7 +165,7 @@
         personal_state = #{personalState,jdbcType=VARCHAR},
       </if>
       <if test="preview != null">
-        preview = #{preview,jdbcType=VARECHAR},
+        preview = #{preview,jdbcType=VARCHAR},
       </if>
       <if test="defaultPost != null">
         default_post = #{defaultPost,jdbcType=TINYINT},
@@ -177,7 +177,7 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = now(),
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -196,7 +196,7 @@
       default_post = #{defaultPost,jdbcType=TINYINT},
       attachment = #{attachment,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

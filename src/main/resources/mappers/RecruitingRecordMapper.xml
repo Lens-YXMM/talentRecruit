@@ -54,7 +54,7 @@
       #{examDate,jdbcType=DATE}, #{examPass,jdbcType=TINYINT}, #{interviewRecord,jdbcType=VARCHAR}, 
       #{interviewDate,jdbcType=DATE}, #{interviewPass,jdbcType=TINYINT}, #{healthy,jdbcType=TINYINT}, 
       #{trainingStart,jdbcType=DATE}, #{trainingEnd,jdbcType=DATE}, #{trainingRecord,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+      now(), now())
   </insert>
   <insert id="insertSelective" parameterType="com.recruit.data.pojo.RecruitingRecord">
     insert into sys_recruiting_record
@@ -176,10 +176,10 @@
         #{trainingRecord,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
       <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
     </trim>
   </insert>
@@ -241,7 +241,7 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = now(),
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -266,7 +266,7 @@
       training_end = #{trainingEnd,jdbcType=DATE},
       training_record = #{trainingRecord,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

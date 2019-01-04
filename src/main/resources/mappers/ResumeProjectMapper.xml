@@ -33,7 +33,7 @@
       create_time, update_time)
     values (#{id,jdbcType=INTEGER}, #{resumeId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
       #{role,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, #{start,jdbcType=DATE}, #{end,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+      now(), now())
   </insert>
   <insert id="insertSelective" parameterType="com.recruit.data.pojo.ResumeProject">
     insert into resume_project
@@ -89,10 +89,10 @@
         #{end,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
       <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
     </trim>
   </insert>
@@ -121,7 +121,7 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = now(),
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -135,7 +135,7 @@
       start = #{start,jdbcType=DATE},
       end = #{end,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

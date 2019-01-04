@@ -45,7 +45,7 @@
       #{location,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{gender,jdbcType=TINYINT}, 
       #{status,jdbcType=TINYINT}, #{traineeStart,jdbcType=DATE}, #{traineeEnd,jdbcType=DATE}, 
       #{probationStart,jdbcType=DATE}, #{probationEnd,jdbcType=DATE}, #{regularDate,jdbcType=DATE}, 
-      #{dimissionDate,jdbcType=DATE}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      #{dimissionDate,jdbcType=DATE}, now(), now()
       )
   </insert>
   <insert id="insertSelective" parameterType="com.recruit.data.pojo.Employee">
@@ -138,10 +138,10 @@
         #{dimissionDate,jdbcType=DATE},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
       <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
     </trim>
   </insert>
@@ -188,7 +188,7 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = now(),
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -208,7 +208,7 @@
       regular_date = #{regularDate,jdbcType=DATE},
       dimission_date = #{dimissionDate,jdbcType=DATE},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
