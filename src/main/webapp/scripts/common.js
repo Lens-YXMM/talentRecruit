@@ -52,11 +52,11 @@ $(function () {
        };
        // 统一登录处理
        this.doLogin = function(){
-           window.location.href = this.getServerUrl('/user/signin.jsp?redirect=' + encodeURIComponent(window.location.href));
+           window.location.href = this.getServerUrl('/user/tosignin?prepath=' + encodeURIComponent(window.location.href));
        };
        // 回到首页
        this.goHome = function(){
-           window.location.href = this.getServerUrl('/index.jsp');
+           window.location.href = this.getServerUrl('toindex');
        }
    }
 });

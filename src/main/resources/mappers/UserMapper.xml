@@ -93,4 +93,15 @@
       update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="checkSignin" resultMap="BaseResultMap" parameterType="map">
+    SELECT
+    <include refid="Base_Column_List" />
+    from sys_user
+    where username = #{username}
+    and password = #{password}
+  </select>
+  <select id="checkUsername" resultType="int" parameterType="string" >
+    select count(1) from sys_user
+    where username = #{username}
+  </select>
 </mapper>

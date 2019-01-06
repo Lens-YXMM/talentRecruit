@@ -1,9 +1,11 @@
 package com.recruit.data.dao;
 
 import com.recruit.data.pojo.Area;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface AreaMapper {
     /**
      * 通过编码查询地区字段信息

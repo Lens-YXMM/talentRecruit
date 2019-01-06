@@ -11,8 +11,8 @@
     <!-- Font-Awesome -->
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Main CSS -->
-    <link rel="stylesheet" href="../../styles/main.css" type="text/css">
-    <link rel="stylesheet" href="../../styles/admin.css" type="text/css">
+    <link rel="stylesheet" href="../../../styles/main.css" type="text/css">
+    <link rel="stylesheet" href="../../../styles/admin.css" type="text/css">
 </head>
 <body>
 <div class="clearfix">

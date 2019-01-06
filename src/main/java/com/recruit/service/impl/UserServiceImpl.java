@@ -1,30 +1,37 @@
 package com.recruit.service.impl;
 
-import com.recruit.dao.UserDao;
+import com.recruit.data.dao.UserMapper;
+import com.recruit.data.pojo.User;
+import com.recruit.service.UserService;
+import com.recruit.web.interceptor.ServerResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.recruit.data.entity.User;
-import com.recruit.service.UserService;
 
-@Service("userService")
+import javax.annotation.Resource;
+
 @Transactional
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
-    User user = new User();
-
-    @Autowired
-    private UserDao userDao;
+    @Resource
+    private UserMapper userMapper;
 
     @Override
-    public User loginUser(String account, String password) {
-        user = userDao.getLoginResult(account,password);
-        return user;
+    public ServerResponse<User> signin(String username, String password) {
+        int resultCount = userMapper.checkUsername(username);
+        if(resultCount == 0 ){
+            return ServerResponse.createByErrorMessage("用户名不存在");
+        }
+
+        //String md5Password = MD5Util.MD5EncodeUtf8(password);
+        User user  = userMapper.checkSignin(username,password);
+        if(user == null){
+            return ServerResponse.createByErrorMessage("密码错误");
+        }
+
+        user.setPassword(null);
+        return ServerResponse.createBySuccess("登录成功",user);
     }
 
-    @Override
-    public int loginUser(String account, String password, String ipAddr, String resolution, String browser){
-        int result = 0;
-        return result;
-    }
 }

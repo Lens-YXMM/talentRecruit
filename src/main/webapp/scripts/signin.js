@@ -36,7 +36,9 @@ $(function () {
         };
         signin(formData,
             function (res) {
-                window.location.href = _com.getUrlParam('redirect') || _com.goHome();
+                var currentUser = JSON.stringify(res);
+                $.cookie('currentUser', currentUser, { expires: 7, path: '/' });
+                window.location.href = _com.getUrlParam('prepath') || 'toindex';
             },
             function (errMsg) {
                 // TODO: 为输入框添加红框
@@ -46,7 +48,7 @@ $(function () {
     // 用户登录
     function signin(userInfo, resolve, reject) {
         _com.request({
-            url: _com.getServerUrl('/user/signin.do'),
+            url: _com.getServerUrl('/user/signin'),
             data: userInfo,
             method: 'POST',
             success: resolve,

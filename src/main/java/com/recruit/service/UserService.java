@@ -1,11 +1,11 @@
 package com.recruit.service;
 
 
-import com.recruit.data.entity.User;
+import com.recruit.data.pojo.User;
+import com.recruit.web.interceptor.ServerResponse;
 
 public interface UserService {
 
-    public User loginUser(String account, String password);
+    ServerResponse<User> signin(String account, String password);
 
-    public int loginUser(String account, String password, String ipAddr, String resolution, String browser);
 }

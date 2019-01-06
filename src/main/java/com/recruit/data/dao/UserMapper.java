@@ -2,7 +2,9 @@ package com.recruit.data.dao;
 
 import com.recruit.data.pojo.User;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository("userMapper")
 public interface UserMapper {
 
     /**
@@ -54,7 +56,7 @@ public interface UserMapper {
      * @param passwordNew 新密码
      * @return 影响行数
      */
-    int updatePasswordByUsername(@Param("username")String username,@Param("passwordNew")String passwordNew);
+    //int updatePasswordByUsername(@Param("username")String username,@Param("passwordNew")String passwordNew);
 
     /**
      * 验证密码是否正确
@@ -62,5 +64,5 @@ public interface UserMapper {
      * @param userId    用户id
      * @return
      */
-    int checkPassword(@Param("password")String password,@Param("userId")Integer userId);
+    //int checkPassword(@Param("password")String password,@Param("userId")Integer userId);
 }

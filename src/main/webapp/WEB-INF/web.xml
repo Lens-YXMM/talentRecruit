@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee     http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
   <display-name>Archetype Created Web Application</display-name>
 
   <welcome-file-list>
-    <welcome-file>/view/index.jsp</welcome-file>
+    <welcome-file>/WEB-INF/view/user/index.jsp</welcome-file>
   </welcome-file-list>
+
+
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
 
   <context-param>
     <param-name>contextConfigLocation</param-name>
@@ -18,8 +24,6 @@
     <param-name>webAppRootKey</param-name>
     <param-value>root</param-value>
   </context-param>
-
-
 
   <filter>
     <filter-name>encodingFilter</filter-name>
@@ -60,5 +64,11 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
+  <context-param>
+    <param-name>mybatisConfigLocation</param-name>
+    <param-value>
+      classpath*:conf.xml
+    </param-value>
+  </context-param>
 
 </web-app>

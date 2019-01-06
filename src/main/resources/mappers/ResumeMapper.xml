@@ -192,7 +192,7 @@
       school = #{school,jdbcType=VARCHAR},
       current_location = #{currentLocation,jdbcType=INTEGER},
       personal_state = #{personalState,jdbcType=VARCHAR},
-      preview = #{preview,jdbcType=VARECHAR},
+      preview = #{preview,jdbcType=VARCHAR},
       default_post = #{defaultPost,jdbcType=TINYINT},
       attachment = #{attachment,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},

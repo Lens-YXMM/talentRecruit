@@ -7,11 +7,11 @@
 
     <title>欢迎登录XX站点</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font-Awesome -->
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Sign in & Sign up CSS -->
-    <link rel="stylesheet" href="../../styles/sign.css" type="text/css">
+    <link rel="stylesheet" href="../styles/sign.css" type="text/css">
 
 </head>
 <body class="text-center">
@@ -27,8 +27,7 @@
                        name="username"
                        class="form-control"
                        placeholder="用户名"
-                       autocomplete="off"
-                       autofocus>
+                       autocomplete="off">
                 <div id="username-input-error" class="invalid-tooltip">
                     <div class="arrow"></div>
                     请填写用户名
@@ -63,7 +62,7 @@
         <div class="divider"></div>
         <div class="signup-right">
             <h5>没有账号:</h5>
-            <a href="signup.jsp" class="link">立即注册 <i class="fa fa-arrow-circle-o-right"></i></a>
+            <a href="../user/tosignup" class="link">立即注册 <i class="fa fa-arrow-circle-o-right"></i></a>
             <h5>使用以下帐号直接登录:</h5>
             <a href="https://weibo.com" class="h4 weibo px-3" target="_blank"><i class="fa fa-weibo"></i></a>
             <a href="https://weixin.com" class="h4 wechat px-3"><i class="fa fa-weixin"></i></a>
@@ -71,12 +70,13 @@
         </div>
     </div>
 
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="../../scripts/common.js"></script>
-    <script src="../../scripts/validator.js"></script>
-    <script src="../../scripts/input.js"></script>
-    <script src="../../scripts/signin.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.14.6/umd/popper-utils.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="../scripts/common.js"></script>
+    <script src="../scripts/validator.js"></script>
+    <script src="../scripts/input.js"></script>
+    <script src="../scripts/signin.js"></script>
 </body>
 </html>

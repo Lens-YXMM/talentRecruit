@@ -11,7 +11,7 @@
     <!-- Font-Awesome -->
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Sign in & Sign up CSS -->
-    <link rel="stylesheet" href="../../styles/sign.css" type="text/css">
+    <link rel="stylesheet" href="../../../styles/sign.css" type="text/css">
 </head>
 <body>
 <div class="container supplement-container">
@@ -123,9 +123,9 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<script src="../../scripts/common.js"></script>
-<script src="../../scripts/validator.js"></script>
-<script src="../../scripts/input.js"></script>
-<script src="../../scripts/infoSupplement.js"></script>
+<script src="../../../scripts/common.js"></script>
+<script src="../../../scripts/validator.js"></script>
+<script src="../../../scripts/input.js"></script>
+<script src="../../../scripts/infoSupplement.js"></script>
 </body>
 </html>
